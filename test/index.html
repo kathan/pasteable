@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="../pasteable.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="PasteCtrl.js"></script>
+    <style>
+    body{
+      font-family: sans-serif;
+    }
+    #my_element{
+      width: 100%;
+      border: .5px solid #bfbfbf;
+      font-size: .75em;
+      margin-top: 6px;
+      padding: 3px;
+      text-align: center;
+      overflow: auto;
+    }
+    #my_grid{
+      width: 100%;
+      border: 1px solid #eee;
+    }
+    #my_grid td{
+      border: 1px solid #eee;
+    }
+    </style>
+  </head>
+  <body ng-app="PasteApp" ng-controller="PasteCtrl">
+    <h4>Simple Grid Example</h4>
+    <input type="text" placeholder="Ordinary text input"/>
+    <div id="my_element">Click and Paste Tab-Delimited Text Here
+      <table id="my_grid">
+        <tr ng-repeat="row in grid_data">
+          <td ng-repeat="col in row">{{col}}</td>
+        </tr>
+      <table>
+    </div>
+  </body>
+</html>
