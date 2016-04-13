@@ -23,11 +23,20 @@
     #my_grid td{
       border: 1px solid #eee;
     }
+    #faux_input{
+      color:grey;
+      font-size:.7em;
+      border:.5px solid silver;
+      padding:3px;
+      width:120px;
+      margin-top:6px;
+    }
     </style>
   </head>
   <body ng-app="PasteApp" ng-controller="PasteCtrl">
     <h4>Simple Grid Example</h4>
     <input type="text" placeholder="Ordinary text input"/>
+    <div id="faux_input">Div using pasteable</div>
     <div id="my_element">Click and Paste Tab-Delimited Text Here
       <table id="my_grid">
         <tr ng-repeat="row in grid_data">
