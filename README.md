@@ -31,15 +31,13 @@ Click..
   </head>
   <body ng-app="PasteApp" ng-controller="PasteCtrl">
     <h4>Simple Grid Example</h4>
-    <input type="text" placeholder="Ordinary text input"/>
-    <div id="faux_input">Div using pasteable</div>
     <div id="my_element">Click and Paste Tab-Delimited Text Here
       <!--
       The elements below will render a multi-dimensional array into a grid
       -->
       <table id="my_grid">
-        <tr ng-repeat="row in grid_data">
-          <td ng-repeat="col in row">{{col}}</td>
+        <tr ng-repeat="row in grid_data track by $index">
+          <td ng-repeat="col in row track by $index">{{col}}</td>
         </tr>
       <table>
     </div>
@@ -52,7 +50,6 @@ var PasteApp = angular.module("PasteApp",[]);
 
 PasteApp.controller('PasteCtrl', function ($scope, $http, $rootScope){
   $scope.grid_data = [];
-  $scope.typed_text = 'Typed text: ';
   /************************************
    * Initialize your pasteable element
    ************************************/
@@ -67,8 +64,8 @@ PasteApp.controller('PasteCtrl', function ($scope, $http, $rootScope){
     for(var r in rows){
       var columns = rows[r].split(/\t/);
       $scope.grid_data.push(columns);
-      $scope.$apply();
     }
+    $scope.$apply();
   });
 });
 ```
