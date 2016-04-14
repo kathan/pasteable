@@ -2,7 +2,7 @@ var PasteApp = angular.module("PasteApp",[]);
 
 PasteApp.controller('PasteCtrl', function ($scope, $http, $rootScope){
   $scope.grid_data = [];
-  $scope.typed_text = 'Typed text: ';
+
   pasteable({selectElement:'#faux_input'});
   var s = pasteable({selectElement:'#my_element'});
   s.addEventListener('paste', function(e){
@@ -10,7 +10,7 @@ PasteApp.controller('PasteCtrl', function ($scope, $http, $rootScope){
     for(var r in rows){
       var columns = rows[r].split(/\t/);
       $scope.grid_data.push(columns);
-      $scope.$apply();
     }
+    $scope.$apply();
   });
 });

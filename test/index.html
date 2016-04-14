@@ -3,35 +3,7 @@
     <script src="../pasteable.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="PasteCtrl.js"></script>
-    <style>
-    body{
-      font-family: sans-serif;
-    }
-    #my_element{
-      border: .5px solid #bfbfbf;
-      font-size: .75em;
-      margin-top: 6px;
-      padding: 3px;
-      text-align: center;
-      overflow: auto;
-      display: inline-block
-    }
-    #my_grid{
-      border: 1px solid #eee;
-    }
-    #my_grid td{
-      border: 1px solid #eee;
-      font-size:.7em;
-    }
-    #faux_input{
-      color:grey;
-      font-size:.7em;
-      border:.5px solid silver;
-      padding:3px;
-      width:120px;
-      margin-top:6px;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body ng-app="PasteApp" ng-controller="PasteCtrl">
     <h4>Simple Grid Example</h4>
@@ -39,8 +11,8 @@
     <div id="faux_input">Div using pasteable</div>
     <div id="my_element">Click and Paste Tab-Delimited Text Here
       <table id="my_grid">
-        <tr ng-repeat="row in grid_data">
-          <td ng-repeat="col in row">{{col}}</td>
+        <tr ng-repeat="row in grid_data track by $index">
+          <td ng-repeat="col in row track by $index">{{col}}</td>
         </tr>
       <table>
     </div>
