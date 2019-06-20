@@ -1,4 +1,4 @@
-function pasteable(options){
+const pasteable = function (options){
 	var cur_el = document.querySelector(options.selectElement),
 	    SHADOW_COLOR = options.shadowColor || '#9dccfd',
 	    SHADOW_WEIGHT = options.shadowWeight || '1',
@@ -58,7 +58,7 @@ function pasteable(options){
 	                                                shiftKey: e.shiftKey});
 
 	  cur_el.dispatchEvent(keyEvent);
-	};
+	}
 	
 	clipboard.addEventListener('paste', function(e) {
 		window.setTimeout(function() {
@@ -68,4 +68,4 @@ function pasteable(options){
 	});
 
 	return cur_el;
-}
+};
