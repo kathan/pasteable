@@ -1,5 +1,6 @@
 # pasteable
 Pasteable is a dependency free library that will allow you to paste text into any HTML element.
+[Try it!](https://codepen.io/kathan-the-typescripter/pen/yLVaeMb)
 ## Pasteable Elements Can Receive Focus.
 Click on the text input and it receives the focus...
 
